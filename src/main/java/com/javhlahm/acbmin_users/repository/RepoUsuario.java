@@ -9,7 +9,6 @@ import com.javhlahm.acbmin_users.entity.UsuariosAcbmin;
 
 @Repository
 public interface RepoUsuario extends JpaRepository<UsuariosAcbmin, Long> {
-    Optional<UsuariosAcbmin> findByUsuario(String usuario);
+    Optional<UsuariosAcbmin> findByEmail(String email);
 
-    void deleteByUsuario(String usuario);
 }

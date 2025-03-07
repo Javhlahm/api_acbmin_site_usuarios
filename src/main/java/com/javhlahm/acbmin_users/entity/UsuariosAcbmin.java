@@ -13,7 +13,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "acbmin_usuarios")
-public class UsuariosAcbmin implements Cloneable {
+public class UsuariosAcbmin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,21 +22,12 @@ public class UsuariosAcbmin implements Cloneable {
     private String nombre;
 
     @Column(unique = true)
-    private String usuario;
+    private String email;
 
     private String contrasena;
 
     private List<String> roles;
 
     private String status;
-
-    @Override
-    public UsuariosAcbmin clone() {
-        try {
-            return (UsuariosAcbmin) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
 }
